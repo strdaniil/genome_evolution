@@ -636,58 +636,61 @@ def runFile():
         print("Invalid path")
 
 
-# GUI setup
-root = tk.Tk()
-root.title("Genome Synteny Simulation")
-root.geometry("900x600")
-frame_left = tk.Frame(root, padx=10, pady=10)
-frame_left.pack(side=tk.LEFT, fill=tk.Y)
-title_label = tk.Label(frame_left, text="Genome Synteny Simulator", font=("Arial", 16))
-title_label.pack(pady=10)
+# # GUI setup
+# root = tk.Tk()
+# root.title("Genome Synteny Simulation")
+# root.geometry("900x600")
+# frame_left = tk.Frame(root, padx=10, pady=10)
+# frame_left.pack(side=tk.LEFT, fill=tk.Y)
+# title_label = tk.Label(frame_left, text="Genome Synteny Simulator", font=("Arial", 16))
+# title_label.pack(pady=10)
 
-# Edge length
-ttk.Label(frame_left, text="Edge Length").pack()
-edgelength = ttk.Entry(frame_left)
-edgelength.insert(0, "0.2")  # Default value
-edgelength.pack(pady=(0,30))
+# # Edge length
+# ttk.Label(frame_left, text="Edge Length").pack()
+# edgelength = ttk.Entry(frame_left)
+# edgelength.insert(0, "0.2")  # Default value
+# edgelength.pack(pady=(0,30))
 
-# Read file
-ttk.Label(frame_left, text="ATGC Data File").pack()
-file_entry = ttk.Entry(frame_left)
-file_entry.pack()
-browse_button = ttk.Button(frame_left, text="Browse", command=browse_file)
-browse_button.pack()
-file_sim_button = ttk.Button(frame_left, text="Find synteny blocks in file", command=runFile)
-file_sim_button.pack(pady=(10,30))
+# # Read file
+# ttk.Label(frame_left, text="ATGC Data File").pack()
+# file_entry = ttk.Entry(frame_left)
+# file_entry.pack()
+# browse_button = ttk.Button(frame_left, text="Browse", command=browse_file)
+# browse_button.pack()
+# file_sim_button = ttk.Button(frame_left, text="Find synteny blocks in file", command=runFile)
+# file_sim_button.pack(pady=(10,30))
 
-# Jump simulation
-ttk.Label(frame_left, text="Number of simulations").pack()
-times = ttk.Entry(frame_left)
-times.insert(0, "1")  # Default value
-times.pack()
-ttk.Label(frame_left, text="Genome size (jump sim)").pack()
-jumpgenomesize = ttk.Entry(frame_left)
-jumpgenomesize.insert(0, "5000")  # Default value
-jumpgenomesize.pack()
-run_button = ttk.Button(frame_left, text="Run Jump Simulation", command=runSimulation)
-run_button.pack(pady=(10,30))
+# # Jump simulation
+# ttk.Label(frame_left, text="Number of simulations").pack()
+# times = ttk.Entry(frame_left)
+# times.insert(0, "1")  # Default value
+# times.pack()
+# ttk.Label(frame_left, text="Genome size (jump sim)").pack()
+# jumpgenomesize = ttk.Entry(frame_left)
+# jumpgenomesize.insert(0, "5000")  # Default value
+# jumpgenomesize.pack()
+# run_button = ttk.Button(frame_left, text="Run Jump Simulation", command=runSimulation)
+# run_button.pack(pady=(10,30))
 
-# Direct comparison of 2 genomes
-ttk.Label(frame_left, text="Genomes").pack()
-gen1 = ttk.Entry(frame_left)
-gen1.insert(0, "")  # Default value
-gen1.pack()
-gen2 = ttk.Entry(frame_left)
-gen2.insert(0, "")  # Default value
-gen2.pack()
-run_button = ttk.Button(frame_left, text="Direct comparison", command=compareGenomes)
-run_button.pack(pady=(10,0))
+# # Direct comparison of 2 genomes
+# ttk.Label(frame_left, text="Genomes").pack()
+# gen1 = ttk.Entry(frame_left)
+# gen1.insert(0, "")  # Default value
+# gen1.pack()
+# gen2 = ttk.Entry(frame_left)
+# gen2.insert(0, "")  # Default value
+# gen2.pack()
+# run_button = ttk.Button(frame_left, text="Direct comparison", command=compareGenomes)
+# run_button.pack(pady=(10,0))
 
-# Note
-color_guide = tk.Label(frame_left, text="Red = formula\nBlue = induced")
-color_guide.pack(pady=10)
+# # Note
+# color_guide = tk.Label(frame_left, text="Red = formula\nBlue = induced")
+# color_guide.pack(pady=10)
 
-frame_right = tk.Frame(root, padx=10, pady=10)
-frame_right.pack(side=tk.RIGHT, fill=tk.BOTH, expand=True)
+# frame_right = tk.Frame(root, padx=10, pady=10)
+# frame_right.pack(side=tk.RIGHT, fill=tk.BOTH, expand=True)
 
-root.mainloop()
+# root.mainloop()
+
+genomes, genomeNames, partitions = runFromFile("C:\\Users\\danii\\OneDrive\\Documents\\GitHub\\bio_research\\ATGC0064\\atgc.pty")
+runATGC(genomes, genomeNames, partitions)
