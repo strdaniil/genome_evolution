@@ -496,4 +496,12 @@ if __name__ == "__main__":
     # print(json.dumps(r, indent=2))
 
     # Example 21×21 grid:
-    run_grid_2d(atgc_dir="ATGC0070", n_runs=100, seed=42, quiet=False)
+    #run_grid_2d(atgc_dir="ATGC0070", n_runs=10, seed=42, quiet=False)
+    run_grid_2d(
+    atgc_dir="ATGC0070",
+    points=9,      # 81 grid points
+    n_runs=5,      # 5 sims each
+    seed=42,
+    quiet=False
+)
+

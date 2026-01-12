@@ -162,7 +162,7 @@ root_genome = [f"cog.{i+1}" for i in range(median_length)]
 
 next_gene_id_holder = [len(root_genome) + 1]
 
-# --- FIX: add missing comma, and pass exponents expected by evolve_genome ---
+
 simulated_genomes = evolve_genome(
     tree, root_genome,
     per_gene_gain_rate=0.1,
@@ -175,7 +175,6 @@ simulated_genomes = evolve_genome(
 
 # Collect synteny block lengths per pair in a dictionary
 
-# --- UPDATE: keep old call style working by giving defaults for new args ---
 def run_simulation(
     tree, root_genome,
     per_gene_gain_rate, per_gene_loss_rate, per_gene_inv_rate,

@@ -293,11 +293,6 @@ def findSyntenyReal2(genome1, genome2):
                     longestBlockLength = length
                     startPos1 = i
                     startPos2 = j
-
-        # ... (rest of your code adding blocks / deleting genes)
-
-
-
             # Add the longest block found to the list of blocks
             if (longestBlockLength > 0):
                 addedBlock = True
